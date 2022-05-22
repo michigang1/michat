@@ -12,6 +12,8 @@
                android:src="@drawable/logo"
                android:layout_centerHorizontal="true"
                android:layout_marginTop="75dp"
+               android:contentDescription="@string/app_name"
+
                tools:ignore="ImageContrastCheck"/>
 
 
