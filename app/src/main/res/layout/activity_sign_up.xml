@@ -7,14 +7,27 @@
         android:layout_height="match_parent"
         tools:context=".SignUp">
 
-    <ImageView android:layout_width="150dp"
-               android:layout_height="150dp"
-               android:src="@drawable/logo"
-               android:layout_centerHorizontal="true"
-               android:layout_marginTop="75dp"
-               android:contentDescription="@string/app_name"
+    <ImageView
+            android:id="@+id/logo.png"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="75dp"
+            android:contentDescription="@string/app_name"
 
-               tools:ignore="ImageContrastCheck"/>
+            tools:ignore="ImageContrastCheck"/>
+
+    <EditText
+            android:id="@+id/edit_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/logo.png"
+            android:layout_marginTop="15dp"
+            android:hint="Name"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+    />
 
 
 </RelativeLayout>
