@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">michat</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
 </resources>

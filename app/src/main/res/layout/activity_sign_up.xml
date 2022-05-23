@@ -24,9 +24,9 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/logo.png"
             android:layout_marginTop="15dp"
-            android:hint="Name"
+            android:hint="@string/name"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
+            android:layout_marginRight="20dp" android:autofillHints="" android:inputType="TODO"/>
 
     <EditText
             android:id="@+id/edit_email"
@@ -34,18 +34,18 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/edit_name"
             android:layout_marginTop="15dp"
-            android:hint="Email"
+            android:hint="@string/email"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
+            android:layout_marginRight="20dp" android:autofillHints="" android:inputType="TODO"/>
     <EditText
             android:id="@+id/edit_password"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/edit_email"
             android:layout_marginTop="15dp"
-            android:hint="Password"
+            android:hint="@string/password"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
+            android:layout_marginRight="20dp" android:autofillHints="" android:inputType="TODO"/>
 
 
 
