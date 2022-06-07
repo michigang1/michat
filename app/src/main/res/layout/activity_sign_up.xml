@@ -28,6 +28,7 @@
         android:layout_marginRight="20dp"
         android:autofillHints=""
         android:hint="@string/name"
+        android:background="@drawable/edit_background"
         android:inputType="textPersonName" />
 
     <EditText
@@ -36,9 +37,10 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/edit_name"
             android:layout_marginTop="15dp"
-            android:hint="@string/email"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:background="@drawable/edit_background"
+            android:hint="@string/email"
             android:autofillHints=""
             android:inputType="textEmailAddress"/>
     <EditText
@@ -47,13 +49,10 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/edit_email"
             android:layout_marginTop="15dp"
-            android:hint="@string/password"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:background="@drawable/edit_background"
+            android:hint="@string/password"
             android:autofillHints=""
             android:inputType="numberPassword"/>
-
-
-
-
 </RelativeLayout>
