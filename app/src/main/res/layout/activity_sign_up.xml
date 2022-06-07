@@ -19,16 +19,16 @@
             tools:ignore="ImageContrastCheck"/>
 
     <EditText
-            android:id="@+id/edit_name"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/logo.png"
-            android:layout_marginTop="15dp"
-            android:hint="@string/name"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:autofillHints=""
-            android:inputType="textPersonName"/>
+        android:id="@+id/edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/logo.png"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="20dp"
+        android:autofillHints=""
+        android:hint="@string/name"
+        android:inputType="textPersonName" />
 
     <EditText
             android:id="@+id/edit_email"
