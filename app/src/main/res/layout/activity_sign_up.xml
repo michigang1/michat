@@ -31,7 +31,7 @@
         android:hint="@string/name"
         android:inputType="textPersonName"
         android:paddingStart="13dp"
-        tools:ignore="RtlSymmetry" />
+        tools:ignore="RtlSymmetry,TextContrastCheck" />
 
     <EditText
         android:id="@+id/edit_email"
@@ -41,27 +41,27 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
         android:layout_marginRight="20dp"
+        android:autofillHints=""
         android:background="@drawable/edit_background"
         android:hint="@string/email"
-        android:paddingStart="13dp"
-        android:autofillHints=""
         android:inputType="textEmailAddress"
-        tools:ignore="RtlSymmetry" />
+        android:paddingStart="13dp"
+        tools:ignore="RtlSymmetry,TextContrastCheck" />
 
     <EditText
         android:id="@+id/edit_password"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@+id/edit_email"
-        android:layout_marginTop="15dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
         android:layout_marginRight="20dp"
+        android:autofillHints=""
         android:background="@drawable/edit_background"
         android:hint="@string/password"
-        android:paddingStart="13dp"
-        android:autofillHints=""
         android:inputType="numberPassword"
-        tools:ignore="RtlSymmetry" />
+        android:paddingStart="13dp"
+        tools:ignore="RtlSymmetry,TextContrastCheck" />
 
     <Button
         android:layout_width="150dp"
@@ -69,6 +69,10 @@
         android:layout_below="@id/edit_password"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:text="@string/sign_up" />
+        android:background="@drawable/edit_btn"
+        android:text="@string/sign_up"
+        android:textSize="20sp"
+        tools:ignore="TextContrastCheck" />
+
 
 </RelativeLayout>
