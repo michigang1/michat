@@ -64,11 +64,11 @@
         tools:ignore="RtlSymmetry" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_password"
-        android:text="@string/sign_up"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="15dp"
+        android:text="@string/sign_up"/>
 
 </RelativeLayout>
