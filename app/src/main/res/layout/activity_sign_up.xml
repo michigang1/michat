@@ -47,6 +47,7 @@
         android:autofillHints=""
         android:inputType="textEmailAddress"
         tools:ignore="RtlSymmetry" />
+
     <EditText
         android:id="@+id/edit_password"
         android:layout_width="match_parent"
@@ -61,4 +62,13 @@
         android:autofillHints=""
         android:inputType="numberPassword"
         tools:ignore="RtlSymmetry" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/edit_password"
+        android:text="@string/sign_up"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"/>
+
 </RelativeLayout>
