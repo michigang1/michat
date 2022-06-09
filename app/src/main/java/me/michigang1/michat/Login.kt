@@ -9,8 +9,8 @@ import android.widget.EditText
 class Login : AppCompatActivity() {
     private lateinit var editEmail: EditText
     private lateinit var editPassword: EditText
-    private lateinit var btnLogin: EditText
-    private lateinit var btnSignUp: EditText
+    private lateinit var btnLogin: Button
+    private lateinit var btnSignUp: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +19,7 @@ class Login : AppCompatActivity() {
         editEmail = findViewById(R.id.edit_email)
         editPassword = findViewById(R.id.edit_password)
         btnLogin = findViewById(R.id.btnLogin)
-        editEmail = findViewById(R.id.btnSignUp)
+        btnSignUp = findViewById(R.id.btnSignUp)
 
         btnSignUp.setOnClickListener{
             val intent = Intent(this, SignUp::class.java)
