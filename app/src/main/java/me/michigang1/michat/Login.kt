@@ -11,6 +11,7 @@ class Login : AppCompatActivity() {
     private lateinit var editPassword: EditText
     private lateinit var btnLogin: EditText
     private lateinit var btnSignUp: EditText
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -22,6 +23,7 @@ class Login : AppCompatActivity() {
 
         btnSignUp.setOnClickListener{
             val intent = Intent(this, SignUp::class.java)
+            startActivity(intent)
         }
     }
 }
