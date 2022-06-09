@@ -64,6 +64,7 @@
         tools:ignore="RtlSymmetry,TextContrastCheck" />
 
     <Button
+        android:id="@+id/btnSignUp"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_password"
@@ -74,5 +75,16 @@
         android:textSize="20sp"
         tools:ignore="TextContrastCheck" />
 
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnSignUp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/edit_btn"
+        android:text="@string/login"
+        android:textSize="20sp"
+        tools:ignore="TextContrastCheck" />
 
 </RelativeLayout>
