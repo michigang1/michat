@@ -33,9 +33,16 @@ class SignUp : AppCompatActivity() {
             val intent = Intent(this, Login::class.java)
             startActivity(intent)
         }
+
+        btnSignUp.setOnClickListener {
+            val email = editEmail.text.toString()
+            val password = editPassword.text.toString()
+
+            signUp(email, password)
+        }
     }
 
-    private fun login(email: String, password: String){
+    private fun signUp(email: String, password: String){
         mAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
