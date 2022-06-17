@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="logOut" type="id"/>
+    <item name="logo.png" type="id"/>
+    <item name="txt_name" type="id"/>
+    <item name="btnLogIn" type="id"/>
+    <item name="btnSignUp" type="id"/>
+    <item name="edit_name" type="id"/>
+    <item name="edit_email" type="id"/>
+    <item name="edit_password" type="id"/>
+    <item name="userRecyclerView" type="id"/>
+</resources>
