@@ -27,7 +27,7 @@
         android:layout_marginRight="20dp"
         android:autofillHints=""
         android:background="@drawable/edit_background"
-        android:hint="@string/name"
+        android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:paddingStart="13dp"
         tools:ignore="RtlSymmetry,TextContrastCheck" />

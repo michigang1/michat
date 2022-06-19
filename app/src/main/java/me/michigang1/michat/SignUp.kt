@@ -49,6 +49,7 @@ class SignUp : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     val intent = Intent(this@SignUp, MainActivity::class.java)
+                    finish()
                     startActivity(intent)
                 }
                 else Toast.makeText(this@SignUp, "User does not exist", Toast.LENGTH_SHORT).show()

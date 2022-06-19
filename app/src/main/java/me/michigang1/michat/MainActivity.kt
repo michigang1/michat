@@ -1,5 +1,6 @@
 package me.michigang1.michat
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -37,7 +38,9 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.logOut){
             mAuth.signOut()
+            val  intent = Intent(this@MainActivity, Login::class.java)
             finish()
+            startActivity(intent)
             return true
         }
         return true
