@@ -2,11 +2,12 @@ package me.michigang1.michat
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+
 
 class Login : AppCompatActivity() {
     private lateinit var editEmail: EditText
@@ -40,17 +41,30 @@ class Login : AppCompatActivity() {
 
             login(email, password)
         }
+
     }
 
     private fun login(email: String, password: String){
-        mAuth.createUserWithEmailAndPassword(email, password)
+        mAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
+                if (task.isSuccessful ) {
                     val intent = Intent(this@Login, MainActivity::class.java)
+                    val currentUser = mAuth.currentUser
+                    updateUI(currentUser)
                     finish()
                     startActivity(intent)
                 }
                 else Toast.makeText(this@Login, "User does not exist", Toast.LENGTH_SHORT).show()
+                updateUI(null)
             }
+    }
+
+    private fun updateUI(account: FirebaseUser?) {
+        if (account != null) {
+            Toast.makeText(this, "You logged-in in successfully", Toast.LENGTH_LONG).show()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+        else Toast.makeText(this, "Invalid password of email", Toast.LENGTH_LONG).show()
     }
 }
