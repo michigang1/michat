@@ -29,11 +29,11 @@ class MainActivity : AppCompatActivity() {
         userList = ArrayList()
 
         userRecyclerView = findViewById(R.id.userRecyclerView)
+        userAdapter = UserAdapter(this@MainActivity, userList)
 
         userRecyclerView.run {
-            userAdapter = UserAdapter(this@MainActivity, userList)
-            userRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
-            userRecyclerView.adapter = userAdapter
+            layoutManager = LinearLayoutManager(this@MainActivity)
+            adapter = userAdapter
         }
 
         mDbRef.child("users").addValueEventListener(object: ValueEventListener{
