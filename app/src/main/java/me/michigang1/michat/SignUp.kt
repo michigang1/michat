@@ -56,13 +56,17 @@ class SignUp : AppCompatActivity() {
                 if (task.isSuccessful) {
                     addUserToDatabase(name,email,mAuth.currentUser?.uid!!)
                     val intent = Intent(this@SignUp, MainActivity::class.java)
-                    val user = mAuth.currentUser
-                    updateUI(user)
+                    val currentUser = mAuth.currentUser
+                    updateUI(currentUser)
                     finish()
                     startActivity(intent)
                 }
-                else Toast.makeText(this@SignUp, "Authentication failed", Toast.LENGTH_SHORT).show()
-                updateUI(null)
+                else{
+                    Toast.makeText(this@SignUp, "Authentication failed", Toast.LENGTH_SHORT).show()
+                    val currentUser = mAuth.currentUser
+                    updateUI(currentUser)
+                }
+
             }
     }
 

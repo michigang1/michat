@@ -27,11 +27,14 @@ class MainActivity : AppCompatActivity() {
         mDbRef = FirebaseDatabase.getInstance().reference
 
         userList = ArrayList()
-        userAdapter = UserAdapter(this, userList)
 
         userRecyclerView = findViewById(R.id.userRecyclerView)
-        userRecyclerView.layoutManager = LinearLayoutManager(this)
-        userRecyclerView.adapter = userAdapter
+
+        userRecyclerView.run {
+            userAdapter = UserAdapter(this@MainActivity, userList)
+            userRecyclerView.layoutManager = LinearLayoutManager(this@MainActivity)
+            userRecyclerView.adapter = userAdapter
+        }
 
         mDbRef.child("users").addValueEventListener(object: ValueEventListener{
             @SuppressLint("NotifyDataSetChanged")
@@ -40,6 +43,9 @@ class MainActivity : AppCompatActivity() {
                 for (postSnapshot in snapshot.children){
                     val currentUser = snapshot.getValue(User::class.java)
                     userList.add(currentUser!!)
+                    if(mAuth.currentUser?.uid != currentUser.uid){
+                        userList.add(currentUser)
+                    }
                 }
                 userAdapter.notifyDataSetChanged()
             }

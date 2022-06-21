@@ -44,19 +44,22 @@ class Login : AppCompatActivity() {
 
     }
 
-    private fun login(email: String, password: String){
-        mAuth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful ) {
-                    val intent = Intent(this@Login, MainActivity::class.java)
-                    val currentUser = mAuth.currentUser
-                    updateUI(currentUser)
-                    finish()
-                    startActivity(intent)
+    private fun login(email: String?, password: String?) {
+            mAuth.signInWithEmailAndPassword(email!!, password!!)
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        val intent = Intent(this@Login, MainActivity::class.java)
+                        val currentUser = mAuth.currentUser
+                        updateUI(currentUser)
+                        finish()
+                        startActivity(intent)
+                    }
+                    else {
+                        Toast.makeText(this@Login, "User does not exist", Toast.LENGTH_SHORT).show()
+                        val currentUser = mAuth.currentUser
+                        updateUI(currentUser)
+                    }
                 }
-                else Toast.makeText(this@Login, "User does not exist", Toast.LENGTH_SHORT).show()
-                updateUI(null)
-            }
     }
 
     private fun updateUI(account: FirebaseUser?) {
