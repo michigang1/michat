@@ -6,4 +6,6 @@
     <string name="sign_up">Sign Up</string>
     <string name="login">Log In</string>
     <string name="logout">Log out</string>
+    <string name="type_a_message">Type a message</string>
+    <string name="send_message">send_message</string>
 </resources>

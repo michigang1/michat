@@ -12,6 +12,6 @@
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="1dp"
-        tools:listitem="@layout/user_layout"/>
+        tools:listitem="@layout/user_layout" />
 
 </RelativeLayout>
