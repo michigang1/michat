@@ -20,8 +20,11 @@
     "url": "https://github.com/michigang1/michat.git"
   },
   "license": "MIT",
-  "author": "Michael Chirozidi",
-  "email": "chirozidi.m@gmail.com",
+  "author": {
+    "name": "Michael Chirozidi",
+    "email": "chirozidi.m@gmail.com",
+    "url": "https://github.com/michigang1"
+  },
   "dependencies": {
     "junit": "4.3.12",
     "firebase-bom": "30.1.0",
