@@ -1,0 +1,33 @@
+{
+  "name": "michat",
+  "version": "1.0",
+  "description": "The Kotlin Android application on Google Firebase",
+  "keywords": [
+    "kotlin",
+    "android",
+    "firebase",
+    "google",
+    "mobile",
+    "java"
+  ],
+  "main": "src/main/java/me.michigang1.michat",
+  "homepage": "https://michigang1.github.io/michat/",
+  "bugs": {
+    "url": "https://github.com/michigang1/michat/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/michigang1/michat.git"
+  },
+  "license": "MIT",
+  "author": "Michael Chirozidi",
+  "email": "chirozidi.m@gmail.com",
+  "dependencies": {
+    "junit": "4.3.12",
+    "firebase-bom": "30.1.0",
+    "firebase-auth-ktx": "21.0.6",
+    "firebase-database-ktx": "20.0.5",
+    "gradle": "7.2.1",
+    "google-services": "4.3.12"
+  }
+}
