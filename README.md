@@ -20,6 +20,7 @@
 * [Contact](#contact)<!-- * [License](#license) -->
 
 
+
 ## General Information
 - The application is a chat messenger. 
 - The app uses registeration by password/emai.
@@ -53,8 +54,10 @@ What are the project requirements/dependencies? Where are they listed? A require
 Proceed to describe how to install / setup one's local environment / get started with the project. -->
 
 
+
 ## Project Status
 Project is: _in progress_
+
 
 
 ## Room for Improvement
@@ -72,14 +75,17 @@ To do:
 Also offer your ideas in the https://github.com/michigang1/michat/discussions
 
 
+
 ## Acknowledgements
 - This project was inspired by my lecturer [Timur Shemsedinov](https://github.com/HowProgrammingWorks/Index/commits?author=tshemsedinov)
 <!-- - This project was based on [this tutorial](https://www.example.com). -->
 
 
 
+
 ## Contact
 Created by Michael Chirozidi - [my telegram](https://telegram.me/poor_boy) - feel free to contact me!
+
 
 
 ## License
