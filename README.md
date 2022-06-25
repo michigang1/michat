@@ -11,7 +11,7 @@
 > 
 > View [_here_](https://github.com/michigang1/michat/tree/main/app/src/main). 
 
-## Table of Contents
+## Contents
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)<!-- * [Features](#features) --><!-- * [Screenshots](#screenshots) --><!-- * [Setup](#setup) --><!-- * [Usage](#usage) -->
 * [Project Status](#project-status)
