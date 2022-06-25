@@ -36,11 +36,6 @@
    - XML
    - jUnit
 
- <!-- ## Features
-List the ready features here:
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3 -->
 
 
 <!-- ## Screenshots
