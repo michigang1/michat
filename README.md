@@ -3,8 +3,7 @@
 
 | Description      | Badge |
 | ----------- | ----------- |
-| **GitHub commit checks state**      | <img alt="GitHub commit checks state" src="https://img.shields.io/github/checks-status/michigang1/michat/main?color=000o0&style=plastic">      |
-| **GitHub branch checks state** | <img alt="GitHub branch checks state" src="https://img.shields.io/github/checks-status/michigang1/michat/main?color=0000">|
+| **GitHub commit checks state**      | <img alt="GitHub commit checks state" src="https://img.shields.io/github/checks-status/michigang1/michat/main?color=0000">      |
 | **GitHub closed issues** |<img alt="GitHub closed issues" src="https://img.shields.io/github/issues-closed/michigang1/michat?color=0000">|
 # michat
 my-coursework
