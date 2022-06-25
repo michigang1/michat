@@ -8,20 +8,16 @@
 
 # michat
 > The Kotlin Android application using Google Firebase
+> 
 > View [_here_](https://github.com/michigang1/michat/tree/main/app/src/main). 
 
 ## Table of Contents
 * [General Info](#general-information)
-* [Technologies Used](#technologies-used)
-<!-- * [Features](#features) -->
-<!-- * [Screenshots](#screenshots) -->
-<!-- * [Setup](#setup) -->
-<!-- * [Usage](#usage) -->
+* [Technologies Used](#technologies-used)<!-- * [Features](#features) --><!-- * [Screenshots](#screenshots) --><!-- * [Setup](#setup) --><!-- * [Usage](#usage) -->
 * [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
 * [Acknowledgements](#acknowledgements)
-* [Contact](#contact)
-<!-- * [License](#license) -->
+* [Contact](#contact)<!-- * [License](#license) -->
 
 
 ## General Information
@@ -39,8 +35,7 @@
    - XML
    - jUnit
 
-
-<!-- ## Features
+ <!-- ## Features
 List the ready features here:
 - Awesome feature 1
 - Awesome feature 2
