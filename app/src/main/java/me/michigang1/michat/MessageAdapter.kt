@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 
@@ -29,11 +29,11 @@ class MessageAdapter(private val context: Context, private val messageList: Arra
         val currentMessage = messageList[position]
         if (holder.javaClass == SentViewHolder::class.java) {
             val viewHolder = holder as SentViewHolder
-            viewHolder.sentMessage.text = currentMessage.message
+            viewHolder.sentMessage.text = currentMessage.message.toString()
         }
         else {
             val viewHolder = holder as ReceiveViewHolder
-            viewHolder.receiveMessage.text = currentMessage.message
+            viewHolder.receiveMessage.text = currentMessage.message.toString()
         }
     }
 
@@ -47,12 +47,12 @@ class MessageAdapter(private val context: Context, private val messageList: Arra
     override fun getItemCount() = messageList.size
 
     class SentViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val sentMessage: EditText = itemView.findViewById(R.id.txt_sent_message)
+        val sentMessage: TextView = itemView.findViewById(R.id.txt_sent_message)
 
     }
 
     class ReceiveViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val receiveMessage: EditText = itemView.findViewById(R.id.txt_receive_message)
+        val receiveMessage: TextView = itemView.findViewById(R.id.txt_receive_message)
     }
 
 }

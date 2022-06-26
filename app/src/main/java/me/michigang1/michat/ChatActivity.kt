@@ -73,7 +73,7 @@ class ChatActivity : AppCompatActivity() {
 
         // adding to database
         btnSend.setOnClickListener {
-            val message = messageBox.text
+            val message = messageBox.text.toString()
             val messageObject = Message(message, senderUid)
 
             mDbRef.child("chats").child(senderRoom!!).child("messages").push()
