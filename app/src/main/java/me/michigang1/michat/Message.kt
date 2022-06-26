@@ -1,4 +1,6 @@
 package me.michigang1.michat
 
-class Message(val message: String? = null, val senderID: String? = null) {
+import android.text.Editable
+
+class Message(val message: Editable? = null, val senderID: String? = null) {
 }

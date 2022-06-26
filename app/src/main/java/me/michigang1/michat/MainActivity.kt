@@ -27,10 +27,8 @@ class MainActivity : AppCompatActivity() {
         mDbRef = FirebaseDatabase.getInstance().reference
 
         userList = ArrayList()
-
-        userRecyclerView = findViewById(R.id.userRecyclerView)
         userAdapter = UserAdapter(this@MainActivity, userList)
-
+        userRecyclerView = findViewById(R.id.userRecyclerView)
         userRecyclerView.run {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = userAdapter
