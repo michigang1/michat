@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
             adapter = userAdapter
         }
 
+        //logic for adding data to RecyclerView of users
         mDbRef.child("users").addValueEventListener(object: ValueEventListener{
             @SuppressLint("NotifyDataSetChanged")
             override fun onDataChange(snapshot: DataSnapshot) {
