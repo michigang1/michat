@@ -8,7 +8,7 @@ import android.widget.EditText
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 
-class MessageAdapter(val context: Context, val messageList: ArrayList<Message>):
+class MessageAdapter(private val context: Context, private val messageList: ArrayList<Message>):
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val itemReceive = 1

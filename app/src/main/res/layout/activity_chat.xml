@@ -36,6 +36,7 @@
             android:textColorHint="#000" />
 
         <ImageView
+            android:id="@+id/btnSend"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="15"
