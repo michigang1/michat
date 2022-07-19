@@ -33,16 +33,15 @@ class MainActivity : AppCompatActivity() {
             layoutManager = LinearLayoutManager(this@MainActivity)
             adapter = userAdapter
         }
-
-        //logic for adding data to RecyclerView of users
-        mDbRef.child("users").addValueEventListener(object: ValueEventListener{
+        // logic for adding data to RecyclerView of users
+        mDbRef.child("users").addValueEventListener(object : ValueEventListener {
             @SuppressLint("NotifyDataSetChanged")
             override fun onDataChange(snapshot: DataSnapshot) {
                 userList.clear()
-                for (postSnapshot in snapshot.children){
-                    val currentUser = snapshot.getValue(User::class.java)
+                for (postSnapshot in snapshot.children) {
+                    val currentUser = postSnapshot.getValue(User::class.java)
                     userList.add(currentUser!!)
-                    if(mAuth.currentUser?.uid != currentUser.uid){
+                    if (mAuth.currentUser?.uid != currentUser.uid) {
                         userList.add(currentUser)
                     }
                 }
@@ -52,7 +51,6 @@ class MainActivity : AppCompatActivity() {
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
-
         })
     }
 
@@ -62,9 +60,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == R.id.logOut){
+        if (item.itemId == R.id.logOut) {
             mAuth.signOut()
-            val  intent = Intent(this@MainActivity, Login::class.java)
+            val intent = Intent(this@MainActivity, Login::class.java)
             finish()
             startActivity(intent)
             return true
