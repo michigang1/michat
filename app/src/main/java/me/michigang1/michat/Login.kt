@@ -9,16 +9,16 @@ import com.google.firebase.auth.FirebaseUser
 import me.michigang1.michat.databinding.ActivityLoginBinding
 
 class Login : AppCompatActivity() {
-    private lateinit var viewBinding: ActivityLoginBinding
+    private lateinit var activityLoginBinding: ActivityLoginBinding
     private lateinit var mAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewBinding = ActivityLoginBinding.inflate(layoutInflater)
+        activityLoginBinding = ActivityLoginBinding.inflate(layoutInflater)
         mAuth = FirebaseAuth.getInstance()
         supportActionBar?.hide()
-        setContentView(viewBinding.root)
-        viewBinding.apply {
+        setContentView(activityLoginBinding.root)
+        activityLoginBinding.apply {
             btnSignUp.setOnClickListener {
                 val intent = Intent(this@Login, SignUp::class.java)
                 startActivity(intent)
@@ -40,10 +40,9 @@ class Login : AppCompatActivity() {
                     Log.d(TAG, "signInWithEmail:success")
                     val currentUser = mAuth.currentUser
                     updateUI(currentUser)
-                } else {
-                    Log.w(TAG, "signInWithEmail:failure", task.exception)
-                    updateUI(null)
                 }
+                Log.w(TAG, "signInWithEmail:failure", task.exception)
+                updateUI(null)
             }
     }
 
@@ -53,7 +52,9 @@ class Login : AppCompatActivity() {
             val intent = Intent(this@Login, MainActivity::class.java)
             startActivity(intent)
             finish()
-        } else Toast.makeText(this, "Authentication failed", Toast.LENGTH_SHORT).show()
+        }
+        Toast.makeText(this, "Authentication failed", Toast.LENGTH_SHORT).show()
+        finish()
     }
 
     companion object {

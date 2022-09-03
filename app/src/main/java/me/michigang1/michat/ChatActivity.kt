@@ -2,10 +2,10 @@ package me.michigang1.michat
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
@@ -42,7 +42,6 @@ class ChatActivity : AppCompatActivity() {
         senderRoom = senderUid + receiverUid
         receiverRoom = receiverUid + senderUid
 
-
         messageBox = findViewById(R.id.messageBox)
         btnSend = findViewById(R.id.btnSend)
         messageRecyclerView = findViewById(R.id.messageRecyclerView)
@@ -54,12 +53,12 @@ class ChatActivity : AppCompatActivity() {
             adapter = messageAdapter
         }
 
-        //logic for adding to RecyclerView of messages
+        // logic for adding to RecyclerView of messages
         mDbRef.child("chats").child(senderRoom!!).child("messages")
-            .addValueEventListener(object: ValueEventListener{
+            .addValueEventListener(object : ValueEventListener {
                 @SuppressLint("NotifyDataSetChanged")
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    for (postSnapshot in snapshot.children){
+                    for (postSnapshot in snapshot.children) {
                         val message = postSnapshot.getValue(Message::class.java)
                         messageList.add(message!!)
                     }

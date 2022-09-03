@@ -14,18 +14,18 @@ import com.google.firebase.database.FirebaseDatabase
 import me.michigang1.michat.databinding.ActivitySignUpBinding
 
 class SignUp : AppCompatActivity() {
-    private lateinit var viewBinding: ActivitySignUpBinding
+    private lateinit var activitySignUpBinding: ActivitySignUpBinding
     private lateinit var mAuth: FirebaseAuth
     private lateinit var mDbRef: DatabaseReference
 
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewBinding = ActivitySignUpBinding.inflate(layoutInflater)
+        activitySignUpBinding = ActivitySignUpBinding.inflate(layoutInflater)
         mAuth = FirebaseAuth.getInstance()
         supportActionBar?.hide()
-        setContentView(viewBinding.root)
-        viewBinding.apply {
+        setContentView(activitySignUpBinding.root)
+        activitySignUpBinding.apply {
             btnLogin.setOnClickListener {
                 val intent = Intent(this@SignUp, Login::class.java)
                 startActivity(intent)
@@ -45,39 +45,30 @@ class SignUp : AppCompatActivity() {
         mAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this@SignUp) { task ->
                 if (task.isSuccessful) {
+                    val user = User(name, email, mAuth.currentUser?.uid!!)
                     Log.d(TAG, "createUserWithEmail:success")
-                    addUserToDatabase(name, email, mAuth.currentUser?.uid!!)
+                    addUserToDatabase(user)
                     updateUI(mAuth.currentUser)
-                } else {
-                    Log.w(TAG, "createUserWithEmail:failure", task.exception)
-                    updateUI(null)
                 }
+                Log.w(TAG, "createUserWithEmail:failure", task.exception)
+                updateUI(null)
             }
     }
 
-    private fun addUserToDatabase(name: String, email: String, uid: String) {
+    private fun addUserToDatabase(user: User) {
         mDbRef = FirebaseDatabase.getInstance().reference
-        mDbRef.child("users").child("user: $uid").setValue(User(name, email, uid))
+        mDbRef.child("users").child("user: ${user.uid}").setValue(user)
     }
 
     private fun updateUI(account: FirebaseUser?) {
         if (account != null) {
-            Toast.makeText(
-                this,
-                "You signed up successfully",
-                Toast.LENGTH_SHORT
-            ).show()
+            Toast.makeText(this, "You signed up successfully", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
-        } else {
-            Toast.makeText(
-                this,
-                "Authentication failed.",
-                Toast.LENGTH_SHORT
-            ).show()
-            finish()
         }
+        Toast.makeText(this, "Authentication failed.", Toast.LENGTH_SHORT).show()
+        finish()
     }
 
     companion object {

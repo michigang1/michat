@@ -2,13 +2,14 @@ package me.michigang1.michat
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
+import me.michigang1.michat.databinding.ReceiveBinding
+import me.michigang1.michat.databinding.SendBinding
 
-class MessageAdapter(private val context: Context, private val messageList: ArrayList<Message>):
+class MessageAdapter(private val context: Context, private val messageList: ArrayList<Message>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val itemReceive = 1
@@ -16,13 +17,14 @@ class MessageAdapter(private val context: Context, private val messageList: Arra
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         if (viewType == itemReceive) {
-            val view: View = LayoutInflater.from(context).inflate(R.layout.receive, parent, false)
-            return UserAdapter.UserViewHolder(view) }
-        else {
-            val view: View = LayoutInflater.from(context).inflate(R.layout.send, parent, false)
-            return UserAdapter.UserViewHolder(view)
+            val binding = ReceiveBinding
+                .inflate(LayoutInflater.from(parent.context), parent, false)
+            return ReceiveViewHolder(binding)
+        } else {
+            val binding = SendBinding
+                .inflate(LayoutInflater.from(parent.context), parent, false)
+            return SentViewHolder(binding)
         }
-
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -30,8 +32,7 @@ class MessageAdapter(private val context: Context, private val messageList: Arra
         if (holder.javaClass == SentViewHolder::class.java) {
             val viewHolder = holder as SentViewHolder
             viewHolder.sentMessage.text = currentMessage.message.toString()
-        }
-        else {
+        } else {
             val viewHolder = holder as ReceiveViewHolder
             viewHolder.receiveMessage.text = currentMessage.message.toString()
         }
@@ -46,13 +47,11 @@ class MessageAdapter(private val context: Context, private val messageList: Arra
 
     override fun getItemCount() = messageList.size
 
-    class SentViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val sentMessage: TextView = itemView.findViewById(R.id.txt_sent_message)
-
+    class SentViewHolder(binding: SendBinding) : RecyclerView.ViewHolder(binding.root) {
+        val sentMessage: TextView = binding.txtSentMessage
     }
 
-    class ReceiveViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        val receiveMessage: TextView = itemView.findViewById(R.id.txt_receive_message)
+    class ReceiveViewHolder(binding: ReceiveBinding) : RecyclerView.ViewHolder(binding.root) {
+        val receiveMessage: TextView = binding.txtReceiveMessage
     }
-
 }
